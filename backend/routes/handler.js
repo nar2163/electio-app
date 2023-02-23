@@ -7,6 +7,8 @@ router.get('/mainPage', (req, res) => {
       data: 'Test data from mainPage backend',
     },
   ]
+  
+  console.log(str)
 
   res.end(JSON.stringify(str))
 })
