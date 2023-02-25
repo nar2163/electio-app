@@ -9,7 +9,7 @@ const Home: React.FC = () => {
   const navigate = useNavigate()
 
   const handleOnClick = () => {
-    navigate('/loginPage')
+    navigate('/landingPage')
   }
 
   return (

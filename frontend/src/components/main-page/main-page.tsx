@@ -22,7 +22,11 @@ const MainPage: React.FC = () => {
       // leave undefined to register as error
     }
   }
-  return <div>{data && data[0].data}</div>
+  return (
+    <div data-testid="main-page-content">
+      <div>{data && data[0].data}</div>
+    </div>
+  )
 }
 
 export default MainPage
