@@ -7,12 +7,17 @@ import { useNavigate } from 'react-router-dom'
 
 const Home: React.FC = () => {
   const navigate = useNavigate()
+
+  const handleOnClick = () => {
+    navigate('/loginPage')
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <RotatingLogo imageSrc={ElectioLogoMain} />
         <br></br>
-        <Button variant="outlined" onClick={() => navigate('/mainPage')}>
+        <Button variant="outlined" onClick={handleOnClick}>
           enter electio
         </Button>
       </header>
