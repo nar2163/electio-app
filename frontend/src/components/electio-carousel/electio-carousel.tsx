@@ -1,37 +1,49 @@
-import * as React from 'react';
-import Carousel from 'react-spring-3d-carousel';
-import { config } from 'react-spring';
-import { v4 as uuid } from 'uuid';
-import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
-import SafetyDividerRoundedIcon from '@mui/icons-material/SafetyDividerRounded';
-import SixtyFpsSelectRoundedIcon from '@mui/icons-material/SixtyFpsSelectRounded';
-import ThumbsUpDownRoundedIcon from '@mui/icons-material/ThumbsUpDownRounded';
-import AssuredWorkloadRoundedIcon from '@mui/icons-material/AssuredWorkloadRounded';
-import AttractionsRoundedIcon from '@mui/icons-material/AttractionsRounded';
-import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
-import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
+import * as React from 'react'
+import Carousel from 'react-spring-3d-carousel'
+import { config } from 'react-spring'
+import { v4 as uuid } from 'uuid'
+import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact'
+import SafetyDividerRoundedIcon from '@mui/icons-material/SafetyDividerRounded'
+import SixtyFpsSelectRoundedIcon from '@mui/icons-material/SixtyFpsSelectRounded'
+import ThumbsUpDownRoundedIcon from '@mui/icons-material/ThumbsUpDownRounded'
+import AssuredWorkloadRoundedIcon from '@mui/icons-material/AssuredWorkloadRounded'
+import AttractionsRoundedIcon from '@mui/icons-material/AttractionsRounded'
+import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded'
+import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded'
 import {
   getSwipeHighlightIcon,
   getNavigationSwipeRoutePaths,
   SwipeType,
   getTooltipSwipeTitles,
-} from './electio-carousel.types';
-import { Link, Button, Tooltip, tooltipClasses, TooltipProps, styled } from '@mui/material';
-import { useStyles } from './electio-carousel.styles';
-import { ElectioCarouselItem } from './electio-carousel-item';
+} from './electio-carousel.types'
+import {
+  Link,
+  Button,
+  Tooltip,
+  tooltipClasses,
+  TooltipProps,
+  styled,
+} from '@mui/material'
+import {
+  CarouselArrowContainer,
+  CarouselFlexContainer,
+  CarouselInfoPanel,
+  CarouselInnerContainer,
+  InfoPanelContainer,
+} from './electio-carousel.styles'
+import { ElectioCarouselItem } from './electio-carousel-item'
 
 export interface ElectioCarouselProps {
-  isHomePage: boolean;
-  showNavigation?: boolean;
+  isHomePage: boolean
+  showNavigation?: boolean
 }
 
 export const ElectioCarousel: React.FC<ElectioCarouselProps> = ({
   isHomePage,
   showNavigation,
 }: ElectioCarouselProps) => {
-  const classes = useStyles();
-  const [goToSlide, setGoToSlide] = React.useState(0);
-  const slideDimensions = isHomePage ? `150px` : `300px`;
+  const [goToSlide, setGoToSlide] = React.useState(0)
+  const slideDimensions = isHomePage ? `150px` : `300px`
 
   const ElectioTooltip = styled(({ className, ...props }: TooltipProps) => (
     <Tooltip {...props} classes={{ popper: className }} />
@@ -39,22 +51,25 @@ export const ElectioCarousel: React.FC<ElectioCarouselProps> = ({
     [`& .${tooltipClasses.tooltip}`]: {
       maxWidth: 200,
     },
-  });
+  })
 
   React.useEffect(() => {
     //don't need to do anything but make sure goToSlide
     //changes and gets passed to Carousel for it to swipe
-  }, [goToSlide]);
+  }, [goToSlide])
 
   const renderFocusOnSwipe = (swipeType: SwipeType) => {
     return (
-      <ElectioTooltip title={`${getTooltipSwipeTitles()[swipeType]}`} placement={'bottom'}>
+      <ElectioTooltip
+        title={`${getTooltipSwipeTitles()[swipeType]}`}
+        placement={'bottom'}
+      >
         <Link href={getNavigationSwipeRoutePaths()[swipeType]}>
           {getSwipeHighlightIcon(isHomePage)[swipeType]}
         </Link>
       </ElectioTooltip>
-    );
-  };
+    )
+  }
 
   const renderSlide = (index: number) => {
     const slides = [
@@ -155,36 +170,36 @@ export const ElectioCarousel: React.FC<ElectioCarouselProps> = ({
           ),
       },
     ].map((slide, index) => {
-      return { ...slide, onClick: () => setGoToSlide(index) };
-    });
-    return slides;
-  };
+      return { ...slide, onClick: () => setGoToSlide(index) }
+    })
+    return slides
+  }
 
   const handleClick = (isRightArrow: boolean) => {
-    let newGoToSlide;
+    let newGoToSlide
 
     if (isRightArrow) {
-      newGoToSlide = goToSlide < 5 ? goToSlide + 1 : 0;
+      newGoToSlide = goToSlide < 5 ? goToSlide + 1 : 0
     } else {
-      newGoToSlide = goToSlide > 1 ? goToSlide - 1 : 5;
+      newGoToSlide = goToSlide > 1 ? goToSlide - 1 : 5
     }
 
-    setGoToSlide(newGoToSlide);
-  };
+    setGoToSlide(newGoToSlide)
+  }
 
   return (
     <>
-      <div className={classes.carouselFlexContainer}>
-        <div className={classes.carouselArrowContainer}>
+      <CarouselFlexContainer>
+        <CarouselArrowContainer>
           <Button
             variant="outlined"
-            className={classes.carouselButton}
+            sx={{ background: 'transparent', border: 'none' }}
             onClick={() => handleClick(false)}
           >
             <ArrowBackIosNewRoundedIcon />
           </Button>
-        </div>
-        <div className={classes.carouselInnerContainer}>
+        </CarouselArrowContainer>
+        <CarouselInnerContainer>
           <Carousel
             slides={renderSlide(goToSlide)}
             goToSlide={goToSlide}
@@ -192,22 +207,22 @@ export const ElectioCarousel: React.FC<ElectioCarouselProps> = ({
             showNavigation={showNavigation ? true : false}
             animationConfig={config.gentle}
           />
-        </div>
-        <div className={classes.carouselArrowContainer}>
+        </CarouselInnerContainer>
+        <CarouselArrowContainer>
           <Button
             variant="outlined"
-            className={classes.carouselButton}
+            sx={{ background: 'transparent', border: 'none' }}
             onClick={() => handleClick(true)}
           >
             <ArrowForwardIosRoundedIcon />
           </Button>
-        </div>
-      </div>
-      <div className={classes.infoPanelContainer}>
-        <div className={classes.carouselInfoPanel}>
+        </CarouselArrowContainer>
+      </CarouselFlexContainer>
+      <InfoPanelContainer>
+        <CarouselInfoPanel>
           <ElectioCarouselItem slideContentIndex={goToSlide} />
-        </div>
-      </div>
+        </CarouselInfoPanel>
+      </InfoPanelContainer>
     </>
-  );
-};
+  )
+}

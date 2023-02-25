@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Home from './components/home/home'
 import './App.css'
 import MainPage from './components/main-page/main-page'
-import LoginPage from './components/landing-page/landing-page'
+import LandingPage from './components/landing-page/landing-page'
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/mainPage" element={<MainPage />}></Route>
-            <Route path="/loginPage" element={<LoginPage />}></Route>
+            <Route path="/landingPage" element={<LandingPage />}></Route>
           </Routes>
         </Router>
       </header>

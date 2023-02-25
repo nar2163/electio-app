@@ -5,12 +5,12 @@ import {
   SwipeRouteNames,
   SwipeRoutePaths,
 } from '../../type-defs/route-types'
-import SwipeDealersChoice from '../../assets/svgs/SwipeDealersChoice.svg'
-import SwipeRemoteDuo from '../../assets/svgs/SwipeRemoteDuo.svg'
-import SwipeCuratedList from '../../assets/svgs/SwipeCuratedList.svg'
-import SwipeShareScreenDuo from '../../assets/svgs/SwipeShareScreenDuo.svg'
-import SwipeSoloSpeedRound from '../../assets/svgs/SwipeSoloSpeedRound.svg'
-import SwipeLoveItOrLoseIt from '../../assets/svgs/SwipeLoveItOrLoseIt.svg'
+import SwipeDealersChoice from '../../assets/SwipeDealersChoice.svg'
+import SwipeRemoteDuo from '../../assets/SwipeRemoteDuo.svg'
+import SwipeCuratedList from '../../assets/SwipeCuratedList.svg'
+import SwipeShareScreenDuo from '../../assets/SwipeShareScreenDuo.svg'
+import SwipeSoloSpeedRound from '../../assets/SwipeSoloSpeedRound.svg'
+import SwipeLoveItOrLoseIt from '../../assets/SwipeLoveItOrLoseIt.svg'
 import {
   AssuredWorkload,
   Attractions,

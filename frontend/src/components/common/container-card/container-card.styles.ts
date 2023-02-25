@@ -1,30 +1,33 @@
-import { makeStyles } from '@mui/styles';
-import { MuiTheme } from '../../../styles/mui-theme';
+/**mport { makeStyles } from '@mui/styles'
+import { MuiTheme } from '../../../styles/mui-theme'
 
-import * as electioColors from '../../../styles/colors';
+import * as electioColors from '../../../styles/colors.js'
 
 export interface ContainerCardStyleProps {
-  hover?: boolean;
+  hover?: boolean
   style?: {
-    backgroundColor: string;
-    borderColor: string;
-    marginTop?: string;
-  };
+    backgroundColor: string
+    borderColor: string
+    marginTop?: string
+  }
 }
 
 export const useStyles = makeStyles({
   root: (props: ContainerCardStyleProps) => ({
     backgroundColor: props.style ? props.style.backgroundColor : 'white',
-    border: `1px solid ${props.style ? props.style.borderColor : `${electioColors.blue10}`}`,
+    border: `1px solid ${
+      props.style ? props.style.borderColor : `${electioColors.blue10}`
+    }`,
     borderRadius: '4px',
     cursor: props.hover ? 'pointer' : undefined,
     marginTop: props.style?.marginTop && props.style?.marginTop,
 
-    
     [MuiTheme.breakpoints.down('xs')]: {
       borderRadius: 0,
       border: 0,
-      borderTop: `1px solid ${props.style ? props.style.borderColor : `${electioColors.blue10}`}`,
+      borderTop: `1px solid ${
+        props.style ? props.style.borderColor : `${electioColors.blue10}`
+      }`,
       borderBottom: `1px solid ${
         props.style ? props.style.borderColor : `${electioColors.blue10}`
       }`,
@@ -41,11 +44,13 @@ export const useStyles = makeStyles({
     backgroundColor: props.style ? props.style.backgroundColor : 'white',
     borderRadius: '4px',
     cursor: props.hover ? 'pointer' : undefined,
-    
+
     [MuiTheme.breakpoints.down('xs')]: {
       borderRadius: 0,
       border: 0,
-      borderTop: `1px solid ${props.style ? props.style.borderColor : `${electioColors.blue10}`}`,
+      borderTop: `1px solid ${
+        props.style ? props.style.borderColor : `${electioColors.blue10}`
+      }`,
       borderBottom: `1px solid ${
         props.style ? props.style.borderColor : `${electioColors.blue10}`
       }`,
@@ -58,4 +63,6 @@ export const useStyles = makeStyles({
         }
       : undefined,
   }),
-});
+})*/
+
+export const test = {}

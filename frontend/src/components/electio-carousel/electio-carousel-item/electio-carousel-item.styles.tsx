@@ -1,4 +1,4 @@
-import { makeStyles, createStyles } from '@mui/styles';
+/**
 import { electioH2 } from '../../../styles/electio-typography';
 
 export const useStyles = makeStyles(() =>
@@ -67,3 +67,7 @@ export const useStyles = makeStyles(() =>
     }),
   })
 );
+
+*/
+
+export const test = {}

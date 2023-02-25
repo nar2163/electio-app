@@ -1,19 +1,16 @@
-import * as React from 'react';
+import * as React from 'react'
 
-import { useWindowSize } from '../../hooks/window-size-hook';
-import { MuiTheme } from '../../../styles/mui-theme';
-import { useStyles } from './content-panel.styles';
-import { ContainerCard } from '../container-card';
+import { ContainerCard } from '../container-card'
 
 export enum ActionButtonType {
   Continue = 'Continue',
   Close = 'Close',
 }
 export interface ContentPanelItemProps {
-  children: React.ReactNode;
-  actionButton?: ActionButtonType;
-  onClick?: (panelData: string) => void;
-  noInnerBorder?: boolean;
+  children: React.ReactNode
+  actionButton?: ActionButtonType
+  onClick?: (panelData: string) => void
+  noInnerBorder?: boolean
 }
 
 export const ContentPanelItem: React.FC<ContentPanelItemProps> = ({
@@ -22,19 +19,31 @@ export const ContentPanelItem: React.FC<ContentPanelItemProps> = ({
   onClick,
   noInnerBorder,
 }: ContentPanelItemProps) => {
-  const [windowWidth] = useWindowSize();
-  const isSmallScreen = windowWidth < MuiTheme.breakpoints.values.sm;
-  const classes = useStyles();
-
-  return noInnerBorder ? (<ContainerCard noInnerBorders={true}>
-    <div className={classes.container}>
-        <div className={classes.content}>{children}</div>
-      </div>
-  </ContainerCard>) : (
-    <ContainerCard>
-      <div className={classes.container}>
-        <div className={classes.content}>{children}</div>
+  return noInnerBorder ? (
+    <ContainerCard noInnerBorders={true}>
+      <div
+        style={{
+          padding: '1.5rem',
+          display: 'flex',
+          overflow: 'hidden',
+          contain: 'content',
+        }}
+      >
+        <div style={{ width: '100%' }}>{children}</div>
       </div>
     </ContainerCard>
-  );
-};
+  ) : (
+    <ContainerCard>
+      <div
+        style={{
+          padding: '1.5rem',
+          display: 'flex',
+          overflow: 'hidden',
+          contain: 'content',
+        }}
+      >
+        <div style={{ width: '100%' }}>{children}</div>
+      </div>
+    </ContainerCard>
+  )
+}

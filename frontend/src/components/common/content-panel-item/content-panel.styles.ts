@@ -1,4 +1,4 @@
-import { makeStyles, createStyles } from '@mui/styles';
+/**import { makeStyles, createStyles } from '@mui/system';
 
 export const useStyles = makeStyles(() =>
   createStyles({
@@ -33,4 +33,6 @@ export const useStyles = makeStyles(() =>
       paddingRight: '5px',
     }),
   })
-);
+);*/
+
+export const test = {}
