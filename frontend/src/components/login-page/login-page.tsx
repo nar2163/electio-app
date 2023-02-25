@@ -10,10 +10,26 @@ import Typography from '@mui/material/Typography'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { Box, Checkbox, FormControlLabel, FormGroup } from '@mui/material'
 import ElectioLogoWithText from '../../assets/ElectioLogo-WithText.png'
+import { useNavigate } from 'react-router-dom'
 
 const theme = createTheme()
 
 function LoginPage() {
+  const navigate = useNavigate()
+
+  const handleSubmit = (event: React.BaseSyntheticEvent) => {
+    event.preventDefault()
+    const data = new FormData(event.target)
+    console.log({
+      email: data.get('email'),
+      password: data.get('password'),
+    })
+    //check login against data in server
+    //test
+
+    navigate('/mainPage')
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
@@ -44,7 +60,12 @@ function LoginPage() {
             <Typography component="h1" variant="h5">
               Electio Login
             </Typography>
-            <Box component="form" noValidate sx={{ mt: 1 }}>
+            <Box
+              component="form"
+              noValidate
+              sx={{ mt: 1 }}
+              onSubmit={handleSubmit}
+            >
               <TextField
                 margin="normal"
                 required
