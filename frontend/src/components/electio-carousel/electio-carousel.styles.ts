@@ -3,16 +3,14 @@ import { styled } from '@mui/system'
 export const CarouselFlexContainer = styled('div')({
   display: 'flex',
   justifyContent: 'center',
-  flexWrap: 'wrap',
+  flexWrap: 'nowrap',
   columnGap: '2px',
   height: '25rem',
   alignItems: 'center',
-  marginTop: '-5.5rem',
-  marginBottom: '-3.5rem',
   wordSpacing: '.25rem',
 })
 
-export const CarouselInnerContainer = styled('div')({ flex: '1 1 70%' })
+export const CarouselInnerContainer = styled('div')({ width: '40rem' })
 
 export const CarouselArrowContainer = styled('div')({
   flex: '0 0 2.5rem',

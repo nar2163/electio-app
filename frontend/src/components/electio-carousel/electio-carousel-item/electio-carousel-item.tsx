@@ -38,8 +38,7 @@ export const ElectioCarouselItem: React.FC<ElectioCarouselItemProps> = ({
       <Button
         variant="outlined"
         href={currentRoute}
-        sx={{      background: 'transparent',
-      border: 'none',}}
+        sx={{ background: 'transparent', border: 'none' }}
       >
         Swipe Now
       </Button>
@@ -47,8 +46,8 @@ export const ElectioCarouselItem: React.FC<ElectioCarouselItemProps> = ({
   }
 
   return (
-    <ContainerCardStatic>
-      <ContentPanelItem>
+    <div>
+      <div>
         <div style={{ width: `100%`, textAlign: 'center' }}>
           <div style={{ display: `inline-block`, margin: `0 auto` }}>
             <div
@@ -95,7 +94,7 @@ export const ElectioCarouselItem: React.FC<ElectioCarouselItemProps> = ({
             <div>{handleRenderButton()}</div>
           </div>
         </div>
-      </ContentPanelItem>
-    </ContainerCardStatic>
+      </div>
+    </div>
   )
 }

@@ -190,7 +190,7 @@ export const ElectioCarousel: React.FC<ElectioCarouselProps> = ({
   return (
     <>
       <CarouselFlexContainer>
-        <CarouselArrowContainer>
+        <div style={{ marginRight: '5rem' }}>
           <Button
             variant="outlined"
             sx={{ background: 'transparent', border: 'none' }}
@@ -198,7 +198,7 @@ export const ElectioCarousel: React.FC<ElectioCarouselProps> = ({
           >
             <ArrowBackIosNewRoundedIcon />
           </Button>
-        </CarouselArrowContainer>
+        </div>
         <CarouselInnerContainer>
           <Carousel
             slides={renderSlide(goToSlide)}
@@ -208,7 +208,7 @@ export const ElectioCarousel: React.FC<ElectioCarouselProps> = ({
             animationConfig={config.gentle}
           />
         </CarouselInnerContainer>
-        <CarouselArrowContainer>
+        <div style={{ marginLeft: '5rem' }}>
           <Button
             variant="outlined"
             sx={{ background: 'transparent', border: 'none' }}
@@ -216,13 +216,13 @@ export const ElectioCarousel: React.FC<ElectioCarouselProps> = ({
           >
             <ArrowForwardIosRoundedIcon />
           </Button>
-        </CarouselArrowContainer>
+        </div>
       </CarouselFlexContainer>
-      <InfoPanelContainer>
+      {/**<InfoPanelContainer>
         <CarouselInfoPanel>
           <ElectioCarouselItem slideContentIndex={goToSlide} />
-        </CarouselInfoPanel>
-      </InfoPanelContainer>
+  </CarouselInfoPanel>
+      </InfoPanelContainer>*/}
     </>
   )
 }
