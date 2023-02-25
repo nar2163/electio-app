@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { ElectioCarousel } from '../electio-carousel'
 
 interface DataItems {
   data: string
@@ -24,7 +25,8 @@ const MainPage: React.FC = () => {
   }
   return (
     <div data-testid="main-page-content">
-      <div>{data && data[0].data}</div>
+      {/**<div>{data && data[0].data}</div>*/}
+      <ElectioCarousel isHomePage={true} showNavigation={true} />
     </div>
   )
 }

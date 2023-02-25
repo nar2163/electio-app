@@ -28,16 +28,8 @@ const LANDING_PAGE_FOOTER_COPY =
 function LandingPage() {
   const navigate = useNavigate()
 
-  const handleSubmit = (event: React.BaseSyntheticEvent) => {
+  const handleSwipeTypeClick = (event: React.BaseSyntheticEvent) => {
     event.preventDefault()
-    const data = new FormData(event.target)
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    })
-    //check login against data in server
-    //test
-
     navigate('/mainPage')
   }
 
@@ -100,9 +92,14 @@ function LandingPage() {
                 {LANDING_PAGE_FOOTER_COPY}
               </Typography>
             </Box>
-            <div style={{marginTop: '2.25rem' }}>
-              <Button variant='outlined' style={{marginRight: '.5rem'}}>solo swipe</Button>
-              <Button variant='outlined'>group swipe</Button>
+            <Button variant="outlined" sx={{ marginTop: '2rem' }} onClick={handleSwipeTypeClick}>
+              Swipe Type Info
+            </Button>
+            <div style={{ marginTop: '2rem' }}>
+              <Button variant="outlined" style={{ marginRight: '.5rem' }}>
+                solo swipe
+              </Button>
+              <Button variant="outlined">group swipe</Button>
             </div>
           </Box>
         </Grid>
