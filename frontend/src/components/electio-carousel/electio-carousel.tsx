@@ -188,7 +188,7 @@ export const ElectioCarousel: React.FC<ElectioCarouselProps> = ({
   }
 
   return (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', rowGap: '1rem' }}>
       <CarouselFlexContainer>
         <div style={{ marginRight: '5rem' }}>
           <Button
@@ -218,11 +218,11 @@ export const ElectioCarousel: React.FC<ElectioCarouselProps> = ({
           </Button>
         </div>
       </CarouselFlexContainer>
-      {/**<InfoPanelContainer>
+      <InfoPanelContainer>
         <CarouselInfoPanel>
           <ElectioCarouselItem slideContentIndex={goToSlide} />
-  </CarouselInfoPanel>
-      </InfoPanelContainer>*/}
-    </>
+        </CarouselInfoPanel>
+      </InfoPanelContainer>
+    </div>
   )
 }
