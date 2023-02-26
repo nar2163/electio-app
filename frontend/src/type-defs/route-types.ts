@@ -28,7 +28,17 @@ export const SwipeRoutePaths: Record<SwipeRouteNames, string> = {
   [SwipeRouteNames.ShareScreenDuo]: `/swipe/${SwipeRouteNames.ShareScreenDuo}`,
   [SwipeRouteNames.SoloSpeedRound]: `/swipe/${SwipeRouteNames.SoloSpeedRound}`,
   [SwipeRouteNames.LoveItOrLoseIt]: `/swipe/${SwipeRouteNames.LoveItOrLoseIt}`,
-};
+}
+
+export enum BuildRouteNames {
+  Solo = 'solo',
+  Group = 'group',
+}
+
+export const BuildRoutePaths: Record<BuildRouteNames, string> = {
+  [BuildRouteNames.Solo]: `build/${BuildRouteNames.Solo}`,
+  [BuildRouteNames.Group]: `build/${BuildRouteNames.Group}`,
+}
 
 export const RoutePaths: Record<RouteNames, string> = {
   [RouteNames.Home]: `/`,
@@ -42,4 +52,4 @@ export const RoutePaths: Record<RouteNames, string> = {
   [RouteNames.SignUp]: `/${RouteNames.SignUp}`,
   [RouteNames.SignOut]: `/${RouteNames.SignOut}`,
   [RouteNames.WelcomeAnimation]: `'${RouteNames.WelcomeAnimation}`,
-};
+}

@@ -4,6 +4,7 @@ import Home from './components/home/home'
 import './App.css'
 import MainPage from './components/main-page/main-page'
 import LandingPage from './components/landing-page/landing-page'
+import { BuildPage } from './components/build-page/build-page'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Route path="/" element={<Home />}></Route>
             <Route path="/mainPage" element={<MainPage />}></Route>
             <Route path="/landingPage" element={<LandingPage />}></Route>
+            <Route path="/build/:buildType" element={<BuildPage />}></Route>
           </Routes>
         </Router>
       </header>

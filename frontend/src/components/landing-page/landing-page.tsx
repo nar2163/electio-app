@@ -20,6 +20,11 @@ import {
 import ElectioLogoWithText from '../../assets/ElectioLogo-WithText.png'
 import ManOnPhone from '../../assets/ManOnPhone.svg'
 import { ElectioCarousel } from '../electio-carousel'
+import {
+  BuildRouteNames,
+  BuildRoutePaths,
+  RouteNames,
+} from '../../type-defs/route-types'
 
 const theme = createTheme()
 
@@ -142,10 +147,23 @@ function LandingPage() {
             </Button>
             {carouselModal}
             <div style={{ marginTop: '2rem' }}>
-              <Button variant="outlined" style={{ marginRight: '.5rem' }}>
+              <Button
+                variant="outlined"
+                style={{ marginRight: '.5rem' }}
+                onClick={() =>
+                  navigate(`/${BuildRoutePaths[BuildRouteNames.Solo]}`)
+                }
+              >
                 solo swipe
               </Button>
-              <Button variant="outlined">group swipe</Button>
+              <Button
+                variant="outlined"
+                onClick={() =>
+                  navigate(`/${BuildRoutePaths[BuildRouteNames.Group]}`)
+                }
+              >
+                group swipe
+              </Button>
             </div>
           </Box>
         </Grid>
