@@ -5,15 +5,14 @@ import { useNavigate } from 'react-router-dom'
 
 import Button from '@mui/material/Button'
 import CssBaseline from '@mui/material/CssBaseline'
-import TextField from '@mui/material/TextField'
 import Paper from '@mui/material/Paper'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
-import { Box, createTheme, ThemeProvider } from '@mui/material'
+import { Box, createTheme, Modal, ThemeProvider } from '@mui/material'
 
 import ElectioLogoWithText from '../../assets/ElectioLogo-WithText.png'
 import ManOnPhone from '../../assets/ManOnPhone.svg'
-import { ElectioCard } from '../electio-card/electio-card'
+import { ElectioCarousel } from '../electio-carousel'
 
 const theme = createTheme()
 
@@ -25,13 +24,42 @@ const LANDING_PAGE_COPY = [
 const LANDING_PAGE_FOOTER_COPY =
   'Electio works just like Tindr: swipe Right for yes, swipe Left for no. Use one of our decision making decks to swipe through either different sets of movies and Electio will do the rest.'
 
+const modalStyle = {
+  position: 'absolute' as 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '90%',
+  bgcolor: 'background.paper',
+  border: '1px solid #000',
+  boxShadow: 24,
+  p: 4,
+}
+
 function LandingPage() {
+  const [open, setOpen] = React.useState(false)
+  const handleOpen = () => setOpen(true)
+  const handleClose = () => setOpen(false)
+
   const navigate = useNavigate()
 
   const handleSwipeTypeClick = (event: React.BaseSyntheticEvent) => {
     event.preventDefault()
-    navigate('/mainPage')
+    handleOpen()
   }
+
+  const carouselModal = (
+    <Modal
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="modal-modal-title"
+      aria-describedby="modal-modal-description"
+    >
+      <Box sx={modalStyle}>
+        <ElectioCarousel isHomePage={false} />
+      </Box>
+    </Modal>
+  )
 
   return (
     <ThemeProvider theme={theme}>
@@ -92,9 +120,14 @@ function LandingPage() {
                 {LANDING_PAGE_FOOTER_COPY}
               </Typography>
             </Box>
-            <Button variant="outlined" sx={{ marginTop: '2rem' }} onClick={handleSwipeTypeClick}>
-              Swipe Type Info
+            <Button
+              variant="outlined"
+              sx={{ marginTop: '2rem' }}
+              onClick={handleOpen}
+            >
+              more info...
             </Button>
+            {carouselModal}
             <div style={{ marginTop: '2rem' }}>
               <Button variant="outlined" style={{ marginRight: '.5rem' }}>
                 solo swipe
