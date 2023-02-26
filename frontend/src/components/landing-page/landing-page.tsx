@@ -8,7 +8,14 @@ import CssBaseline from '@mui/material/CssBaseline'
 import Paper from '@mui/material/Paper'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
-import { Box, createTheme, Modal, ThemeProvider } from '@mui/material'
+import {
+  Box,
+  Card,
+  CardContent,
+  createTheme,
+  Modal,
+  ThemeProvider,
+} from '@mui/material'
 
 import ElectioLogoWithText from '../../assets/ElectioLogo-WithText.png'
 import ManOnPhone from '../../assets/ManOnPhone.svg'
@@ -21,7 +28,7 @@ const LANDING_PAGE_COPY = [
   "We totally feel you, and that's why we built Electio! The average person wastes 30 minutes a day browsing NetflexSo let us take care of the boring stuff! We'll keep track of your preferences to provide the best swiping experience, everytime.",
 ]
 
-const LANDING_PAGE_FOOTER_COPY =
+const LANDING_PAGE_TLDR =
   'Electio works just like Tindr: swipe Right for yes, swipe Left for no. Use one of our decision making decks to swipe through either different sets of movies and Electio will do the rest.'
 
 const modalStyle = {
@@ -96,30 +103,36 @@ function LandingPage() {
             <Box sx={{ width: '90%' }}>
               <Typography variant="h4">So, what exactly is Electio?</Typography>
               <br></br>
-              <div style={{ textAlign: 'left', marginBottom: '2rem' }}>
+              <div
+                style={{
+                  textAlign: 'left',
+                  marginBottom: '2rem',
+                  padding: '.5 rem',
+                }}
+              >
                 {LANDING_PAGE_COPY.map((paragraph: string) => {
                   return (
-                    <Typography variant="body2" gutterBottom>
+                    <Typography variant="body1" gutterBottom>
                       {paragraph}
                     </Typography>
                   )
                 })}
               </div>
             </Box>
-            <Box
+            <Card
               sx={{
-                backgroundColor: '#ced8eb',
+                border: '1px solid #ced8eb',
                 borderRadius: '1rem',
-                padding: '1rem',
+                textAlign: 'left',
               }}
             >
-              <Typography variant="h5" sx={{ marginBottom: '1rem' }}>
-                TLDR:
-              </Typography>
-              <Typography variant="body1" textAlign="left">
-                {LANDING_PAGE_FOOTER_COPY}
-              </Typography>
-            </Box>
+              <CardContent>
+                <Typography variant="h5" component="div">
+                  TLDR:
+                </Typography>
+                <Typography variant="body2">{LANDING_PAGE_TLDR}</Typography>
+              </CardContent>
+            </Card>
             <Button
               variant="outlined"
               sx={{ marginTop: '2rem' }}
