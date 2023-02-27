@@ -60,7 +60,7 @@ function LandingPage() {
     handleOpen()
   }
 
-  const carouselModal = (
+  const CarouselModal = (
     <Modal
       open={open}
       onClose={handleClose}
@@ -154,7 +154,7 @@ function LandingPage() {
             >
               more info...
             </Button>
-            {carouselModal}
+            {CarouselModal}
           </Box>
         </Grid>
       </Grid>

@@ -6,7 +6,7 @@ import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
 
 export interface ElectioCardProps {
-  cardTitle: string
+  cardTitle?: string
   imgSrc?: string
   textContent?: string[]
   footerButtons?: JSX.Element[]
@@ -41,14 +41,14 @@ export const ElectioCard: React.FC<ElectioCardProps> = ({
           </Typography>
         )}
       </CardContent>
+      <CardActions>{children}</CardActions>
       <CardActions>
-        <>
-          {children}
+        <CardContent sx={{ justifyContent: 'center' }}>
           {footerButtons &&
-            footerButtons.forEach((button) => {
+            footerButtons.map((button) => {
               return button
             })}
-        </>
+        </CardContent>
       </CardActions>
     </Card>
   )

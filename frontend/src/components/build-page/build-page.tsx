@@ -1,4 +1,4 @@
-import { Box, TextField } from '@mui/material'
+import { Box, Button, TextField } from '@mui/material'
 import * as React from 'react'
 import { useParams } from 'react-router-dom'
 import { BuildType } from '../../type-defs/build-types'
@@ -13,9 +13,7 @@ export const BuildPage: React.FC = () => {
 
   return (
     <div>
-      <ElectioCard cardTitle={'Title'}>
-        <BuildForm buildFormType={deckBuildType} />
-      </ElectioCard>
+      <BuildForm buildFormType={deckBuildType} />
     </div>
   )
 }
