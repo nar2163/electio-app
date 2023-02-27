@@ -24,7 +24,7 @@ const MainPage: React.FC = () => {
     }
   }
   return (
-    <div data-testid="main-page-content">
+    <div data-testid="main-page-content" style={{ backgroundColor: '#282c34' }}>
       {/**<div>{data && data[0].data}</div>*/}
       <ElectioCarousel isHomePage={true} showNavigation={true} />
     </div>
