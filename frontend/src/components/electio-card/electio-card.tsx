@@ -3,13 +3,13 @@ import Card from '@mui/material/Card'
 import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
-import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 
 export interface ElectioCardProps {
   cardTitle: string
   imgSrc?: string
   textContent?: string[]
+  footerButtons?: JSX.Element[]
   children?: JSX.Element
 }
 
@@ -17,6 +17,7 @@ export const ElectioCard: React.FC<ElectioCardProps> = ({
   cardTitle,
   imgSrc,
   textContent,
+  footerButtons,
   children,
 }: ElectioCardProps) => {
   return (
@@ -28,16 +29,26 @@ export const ElectioCard: React.FC<ElectioCardProps> = ({
           title="main-card-title"
         />
       )}
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          So what exactly is Electio?
-        </Typography>
-        <Typography variant="body2" color="text.secondary"></Typography>
+      <CardContent sx={{ textAlign: 'left' }}>
+        {cardTitle && (
+          <Typography gutterBottom variant="h5" component="div">
+            {cardTitle}
+          </Typography>
+        )}
+        {textContent && (
+          <Typography variant="body2" color="text.secondary">
+            {textContent}
+          </Typography>
+        )}
       </CardContent>
       <CardActions>
-        {children}
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <>
+          {children}
+          {footerButtons &&
+            footerButtons.forEach((button) => {
+              return button
+            })}
+        </>
       </CardActions>
     </Card>
   )

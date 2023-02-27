@@ -2,8 +2,17 @@ import * as React from 'react'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import { FormControlLabel, Radio, RadioGroup } from '@mui/material'
+import { BuildType } from '../../../type-defs/build-types'
 
-export default function BuildForm() {
+export interface BuildFormProps {
+  buildFormType: BuildType
+}
+
+export const BuildForm: React.FC<BuildFormProps> = ({
+  buildFormType,
+}: BuildFormProps) => {
+  const [buildType, setBuildType] = React.useState<BuildType>(buildFormType)
+
   return (
     <Box
       component="form"
@@ -15,34 +24,10 @@ export default function BuildForm() {
     >
       <div>
         <TextField
-          error
-          id="outlined-error"
-          label="Error"
-          defaultValue="Hello World"
-        />
-        <TextField
-          error
-          id="outlined-error-helper-text"
-          label="Error"
-          defaultValue="Hello World"
-          helperText="Incorrect entry."
-        />
-      </div>
-      <div>
-        <TextField
-          error
-          id="filled-error"
-          label="Error"
-          defaultValue="Hello World"
-          variant="filled"
-        />
-        <TextField
-          error
-          id="filled-error-helper-text"
-          label="Error"
-          defaultValue="Hello World"
-          helperText="Incorrect entry."
-          variant="filled"
+          id="outlined-multiline-flexible"
+          label="Multiline"
+          multiline
+          maxRows={4}
         />
       </div>
       <RadioGroup
