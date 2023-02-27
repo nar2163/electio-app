@@ -29,8 +29,7 @@ import {
 const theme = createTheme()
 
 const LANDING_PAGE_COPY = [
-  'Excited to spend the night watching a movie only to spend an hour endlessly browsing Netflix with no relief in sight?',
-  "We totally feel you, and that's why we built Electio! So let us take care of the boring stuff! We'll keep track of your preferences to provide the best swiping experience, everytime.",
+  "Excited to spend the night watching a movie only to spend an hour endlessly browsing Netflix with no relief in sight? We totally feel you, and that's why we built Electio! So let us take care of the boring stuff! We'll keep track of your preferences to provide the best swiping experience, everytime.",
 ]
 
 const LANDING_PAGE_TLDR =
@@ -143,10 +142,12 @@ function LandingPage() {
                 })}
               </div>
             </Box>
-            <Typography variant="h5" component="div">
-              TLDR:
-            </Typography>
-            <Typography variant="body2">{LANDING_PAGE_TLDR}</Typography>
+            <div style={{ textAlign: 'left' }}>
+              <Typography variant="body2" component="div">
+                <b>TLDR: </b>
+                {LANDING_PAGE_TLDR}
+              </Typography>
+            </div>
             <Button
               variant="outlined"
               sx={{ marginTop: '1rem' }}

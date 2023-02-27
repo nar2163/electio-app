@@ -11,23 +11,25 @@ import {
   Typography,
 } from '@mui/material'
 import { BuildType } from '../../../type-defs/build-types'
+import { Deck } from '../build-deck-form/build-deck-form'
 
-export interface BuildFormProps {
+export interface BuildCardFormProps {
   buildFormType: BuildType
+  deck: Deck
 }
 
 export interface Card {
   title: string
   body?: string
 }
-export interface Deck {
-  deckTitle?: string
-  cards?: Card[]
-}
 
-export const BuildForm: React.FC<BuildFormProps> = ({
+export const BuildCardForm: React.FC<BuildCardFormProps> = ({
   buildFormType,
-}: BuildFormProps) => {
+  deck,
+}: BuildCardFormProps) => {
+  //API's that retrieve new deck from backend and build it here.
+  //eventually sending the whole deck to the backend
+  /**
   const [buildType, setBuildType] = React.useState<BuildType>(buildFormType)
   const [cardTitle, setCardTitle] = React.useState('')
   const [cardInfo, setCardInfo] = React.useState('')
@@ -56,7 +58,7 @@ export const BuildForm: React.FC<BuildFormProps> = ({
   }
 
   return (
-    <>
+    <div style={{ justifyContent: 'center' }}>
       <h3>basic instructions...</h3>
       <Card sx={{ display: 'flex', flexDirection: 'column' }}>
         {deckTitleLoading ? (
@@ -68,7 +70,13 @@ export const BuildForm: React.FC<BuildFormProps> = ({
             noValidate
             autoComplete="off"
           >
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                margin: '.5rem',
+              }}
+            >
               <TextField
                 required
                 id="outlined-required"
@@ -125,11 +133,9 @@ export const BuildForm: React.FC<BuildFormProps> = ({
           alignItems: 'center',
         }}
       >
-        <CardActions>
-          <Button variant="outlined">submit</Button>
-          <Button variant="outlined">need help?</Button>
-        </CardActions>
+        <Button variant="outlined">need help?</Button>
       </Box>
-    </>
-  )
+    </div>
+  )*/
+  return <>hi</>
 }
