@@ -1,8 +1,8 @@
 # Electio: Tindr for Micro Decisions
 
-[electio-screenshot-1](frontend/src/assets/electio-screenshot-1.png)
+![electio-screenshot-1](frontend/src/assets/electio-screenshot-1.png)
 
-[electio-screenshot-2](frontend/src/assets/electio-screenshot-2.png)
+![electio-screenshot-2](frontend/src/assets/electio-screenshot-2.png)
 
 **NOTE:** *as of MUI 4.9.0 `makeStyles` and `createStyles` have been deprecated and replaced with the [styled() utility](https://mui.com/system/styled/). Slowly migrating everything over, for now still a WIP... in fact, everything is a work in progress please and thank you. currently building build and swipe services and ui*
 
