@@ -85,7 +85,7 @@ function LandingPage() {
           sx={{
             backgroundImage: `url(${ElectioLogoWithText})`,
             backgroundRepeat: 'no-repeat',
-            backgroundColor: '#ced8eb',
+            backgroundColor: 'white',
             backgroundSize: '30%',
             backgroundPosition: 'center',
           }}
@@ -102,9 +102,28 @@ function LandingPage() {
           >
             <img
               src={ManOnPhone}
-              style={{ height: '15rem', marginBottom: '2rem' }}
+              style={{ height: '15rem' }}
               alt={'man-on-phone'}
             />
+            <div style={{ marginTop: '.75rem', marginBottom: '1.5rem' }}>
+              <Button
+                variant="outlined"
+                style={{ marginRight: '.5rem' }}
+                onClick={() =>
+                  navigate(`/${BuildRoutePaths[BuildRouteNames.Solo]}`)
+                }
+              >
+                solo swipe
+              </Button>
+              <Button
+                variant="outlined"
+                onClick={() =>
+                  navigate(`/${BuildRoutePaths[BuildRouteNames.Group]}`)
+                }
+              >
+                group swipe
+              </Button>
+            </div>
             <Box sx={{ width: '90%' }}>
               <Typography variant="h4">So, what exactly is Electio?</Typography>
               <br></br>
@@ -124,47 +143,18 @@ function LandingPage() {
                 })}
               </div>
             </Box>
-            <Card
-              sx={{
-                border: '1px solid #ced8eb',
-                borderRadius: '1rem',
-                textAlign: 'left',
-              }}
-            >
-              <CardContent>
-                <Typography variant="h5" component="div">
-                  TLDR:
-                </Typography>
-                <Typography variant="body2">{LANDING_PAGE_TLDR}</Typography>
-              </CardContent>
-            </Card>
+            <Typography variant="h5" component="div">
+              TLDR:
+            </Typography>
+            <Typography variant="body2">{LANDING_PAGE_TLDR}</Typography>
             <Button
               variant="outlined"
-              sx={{ marginTop: '2rem' }}
+              sx={{ marginTop: '1rem' }}
               onClick={handleOpen}
             >
               more info...
             </Button>
             {carouselModal}
-            <div style={{ marginTop: '2rem' }}>
-              <Button
-                variant="outlined"
-                style={{ marginRight: '.5rem' }}
-                onClick={() =>
-                  navigate(`/${BuildRoutePaths[BuildRouteNames.Solo]}`)
-                }
-              >
-                solo swipe
-              </Button>
-              <Button
-                variant="outlined"
-                onClick={() =>
-                  navigate(`/${BuildRoutePaths[BuildRouteNames.Group]}`)
-                }
-              >
-                group swipe
-              </Button>
-            </div>
           </Box>
         </Grid>
       </Grid>

@@ -1,10 +1,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Home from './components/home/home'
+
 import './App.css'
-import MainPage from './components/main-page/main-page'
+import Home from './components/home/home'
 import LandingPage from './components/landing-page/landing-page'
 import { BuildPage } from './components/build-page/build-page'
+import Swipe from './components/swipe/swipe'
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/mainPage" element={<MainPage />}></Route>
+            <Route path="/swipe" element={<Swipe />}></Route>
             <Route path="/landingPage" element={<LandingPage />}></Route>
             <Route path="/build/:buildType" element={<BuildPage />}></Route>
           </Routes>

@@ -5,7 +5,7 @@ interface DataItems {
   data: string
 }
 
-const MainPage: React.FC = () => {
+const Swipe: React.FC = () => {
   const [data, setData] = React.useState<DataItems[]>()
 
   React.useEffect(() => {
@@ -31,4 +31,4 @@ const MainPage: React.FC = () => {
   )
 }
 
-export default MainPage
+export default Swipe
