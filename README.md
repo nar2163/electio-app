@@ -1,6 +1,6 @@
 # Electio: Tindr for Micro Decisions
 
-![electio-opening-gif](frontend/src/assets/electio-carousel-walkthru.gif)
+![electio-opening-gif](frontend/src/assets/electio-animation.gif)
 
 ![electio-screenshot-2](frontend/src/assets/electio-screenshot-2.png)
 
