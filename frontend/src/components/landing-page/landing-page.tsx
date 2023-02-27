@@ -29,8 +29,8 @@ import {
 const theme = createTheme()
 
 const LANDING_PAGE_COPY = [
-  'Excited to spend the night watching a movie with friends and family, or maybe with just yourself, only to spend an hour endlessly browsing Netflix with no relief in sight?',
-  "We totally feel you, and that's why we built Electio! The average person wastes 30 minutes a day browsing NetflexSo let us take care of the boring stuff! We'll keep track of your preferences to provide the best swiping experience, everytime.",
+  'Excited to spend the night watching a movie only to spend an hour endlessly browsing Netflix with no relief in sight?',
+  "We totally feel you, and that's why we built Electio! So let us take care of the boring stuff! We'll keep track of your preferences to provide the best swiping experience, everytime.",
 ]
 
 const LANDING_PAGE_TLDR =
