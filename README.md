@@ -1,6 +1,6 @@
 # Electio: Tindr for Micro Decisions
 
-**NOTE:** *Material-UI version 4. 9. 0 is the version in which `makeStyles` and `createStyles` have been deprecated and replaced with the [styled() utility](https://mui.com/system/styled/). Slowly migrating everything over, for now still a WIP... in fact, everything is a work in progress please and thank you. currently building build and swipe services and ui*
+**NOTE:** *as of MUI 4.9.0 `makeStyles` and `createStyles` have been deprecated and replaced with the [styled() utility](https://mui.com/system/styled/). Slowly migrating everything over, for now still a WIP... in fact, everything is a work in progress please and thank you. currently building build and swipe services and ui*
 
 Excited to spend the night watching a movie only to spend an hour endlessly browsing Netflix with no relief in sight? We all waste time making simple decisions, but compounded over time that time can add up significantly. For example, [studies](https://www.pcmag.com/news/netflix-users-waste-ton-of-time-searching-for-something-to-watch) have shown an average of 30 minutes a day on a single decision, such as what to watch on Netflix. That would mean after one year, a person could have wasted up to 180 hours (about 1 week) on deciding what to fall asleep to on Netflix...
 
