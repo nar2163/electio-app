@@ -4,8 +4,6 @@
 
 ![electio-screenshot-2](frontend/src/assets/electio-screenshot-2.png)
 
-**[ELECTIO AGILE BOARD](https://github.com/users/nar2163/projects/1)** *(link to original project board from first iteration of Electio)*
-
 **NOTE:** _as of MUI 4.9.0 `makeStyles` and `createStyles` have been deprecated and replaced with the [styled() utility](https://mui.com/system/styled/). Slowly migrating everything over, for now still a WIP... in fact, everything is a work in progress please and thank you. currently building build and swipe services and ui_
 
 Excited to spend the night watching a movie only to spend an hour endlessly browsing Netflix with no relief in sight? We all waste time making simple decisions, but compounded over time that time can add up significantly. For example, [studies](https://www.pcmag.com/news/netflix-users-waste-ton-of-time-searching-for-something-to-watch) have shown an average of 30 minutes a day on a single decision, such as what to watch on Netflix. That would mean after one year, a person could have wasted up to 180 hours (about 1 week) on deciding what to fall asleep to on Netflix...
@@ -24,9 +22,9 @@ In order to run this program, you will need to have the following tools pre-inst
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/username/repositoryname.git`
-2. Navigate to the project directory: `cd theo-captcha`
-3. Install the required dependencies: `npm install`
+1. Clone the repository: `git clone https://github.com/nar2163/electio-app.git`
+2. Navigate to the project directory: `cd electio-app`
+3. Install the required dependencies from both the `fronend` and `backend` folders: `npm install` etc...
 
 ## Running the Application in a Dev environment
 
