@@ -4,7 +4,7 @@
 
 ![electio-screenshot-2](frontend/src/assets/electio-screenshot-2.png)
 
-(link to original project board)(https://github.com/users/nar2163/projects/1
+*[link to original project board](https://github.com/users/nar2163/projects/1)*
 
 **NOTE:** _as of MUI 4.9.0 `makeStyles` and `createStyles` have been deprecated and replaced with the [styled() utility](https://mui.com/system/styled/). Slowly migrating everything over, for now still a WIP... in fact, everything is a work in progress please and thank you. currently building build and swipe services and ui_
 
